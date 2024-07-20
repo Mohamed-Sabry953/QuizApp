@@ -12,7 +12,6 @@ class QuestionsNumber extends StatelessWidget {
         height: 70.h,
         width: double.infinity.w,
         child: ListView.separated(
-            reverse: true,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return Column(

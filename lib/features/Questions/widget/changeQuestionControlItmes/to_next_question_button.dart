@@ -50,16 +50,17 @@ class ToNextQuestionButton extends StatelessWidget {
             mainAxisAlignment:
             MainAxisAlignment.center,
             children: [
+              SizedBox(
+                width: 3.w,
+              ),
               Center(
                 child: Icon(
-                  Icons.arrow_back_ios_new,
+                  Icons.arrow_forward_ios_rounded,
                   size: 30.sp,
                   color: Colors.white,
                 ),
               ),
-              SizedBox(
-                width: 5.w,
-              ),
+
             ],
           ),
         ),

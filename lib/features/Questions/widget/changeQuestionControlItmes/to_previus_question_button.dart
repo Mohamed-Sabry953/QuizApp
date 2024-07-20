@@ -45,16 +45,14 @@ class ToPreviusQuestionButton extends StatelessWidget {
             mainAxisAlignment:
             MainAxisAlignment.center,
             children: [
-              SizedBox(
-                width: 5.w,
-              ),
               Center(
                 child: Icon(
-                  Icons.arrow_forward_ios,
+                  Icons.arrow_back_ios_new,
                   size: 30.sp,
                   color: Colors.white,
                 ),
               ),
+              SizedBox(width: 5.w,),
             ],
           ),
         ),

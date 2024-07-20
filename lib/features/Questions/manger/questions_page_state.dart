@@ -13,3 +13,4 @@ final class DurationOut extends QuestionsPageState {}
 final class LoadingDataState extends QuestionsPageState {}
 final class GetDataSucState extends QuestionsPageState {}
 final class SaveStudentAnswerSucState extends QuestionsPageState {}
+final class ChangeAccCheckState extends QuestionsPageState {}

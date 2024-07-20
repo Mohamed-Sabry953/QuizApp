@@ -4,6 +4,8 @@ class QuestionModel {
   String secondAnswer;
   String thirdAnswer;
   String fourAnswer;
+  String subjectId;
+  String id;
   int trueAnswer;
 
   QuestionModel(
@@ -12,6 +14,8 @@ class QuestionModel {
       required this.secondAnswer,
       required this.thirdAnswer,
       required this.fourAnswer,
+        required this.id,
+      required this.subjectId,
       required this.trueAnswer});
 
   QuestionModel.fromjson(Map<String, dynamic> json)
@@ -22,6 +26,8 @@ class QuestionModel {
           thirdAnswer: json["thirdAnswer"],
           fourAnswer: json["fourAnswer"],
           trueAnswer: json["trueAnswer"],
+          subjectId: json["SubjectId"],
+          id: json["id"],
         );
 
   Map<String, dynamic> Tojson() {
@@ -32,6 +38,8 @@ class QuestionModel {
       "thirdAnswer": thirdAnswer,
       "fourAnswer": fourAnswer,
       "trueAnswer": trueAnswer,
+      "SubjectId": subjectId,
+      "id":id
     };
   }
 }

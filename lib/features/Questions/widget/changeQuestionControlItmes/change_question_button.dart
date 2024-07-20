@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quiz_app/core/utils/constant/constantLists.dart';
 import 'package:quiz_app/features/Questions/manger/questions_page_cubit.dart';
+import 'package:quiz_app/features/Questions/widget/questionMassage/end_quiz_massage.dart';
 
 class ChangeQuestionButton extends StatelessWidget {
-  const ChangeQuestionButton({super.key});
-
+   ChangeQuestionButton(this.name,this.id,this.index,this.timer,{super.key});
+  String name;
+  String id;
+  int index;
+  int timer;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<QuestionsPageCubit,QuestionsPageState>(builder: (context, state) {
@@ -18,7 +23,9 @@ class ChangeQuestionButton extends StatelessWidget {
             QuestionsPageCubit.get(context).changeQuestionNumber(QuestionsPageCubit.get(context).questionNumber + 1);
           }
           else{
-            showDialog(context);
+            ConstantLists.questions=QuestionsPageCubit.get(context).question;
+            ConstantLists.answer=QuestionsPageCubit.get(context).studentAnswerNumber;
+            showDialog(context,name,index,id,timer);
           }
         },
         child: Container(
@@ -57,17 +64,9 @@ class ChangeQuestionButton extends StatelessWidget {
       );
     },);
   }
-  showDialog(BuildContext context){
+  showDialog(BuildContext context,String name,int index,String id,int timer){
     showAdaptiveDialog(context: context, builder: (context) {
-      return Container(
-        margin: REdgeInsets.only(
-          top: 300,
-          left: 150,right: 150
-        ),
-        width: 100.w,
-        height: 200.h,
-        color: Colors.red,
-      );
+      return EndQuizMassage("هل تريد انهاء اختبار ", name, index,name,id,timer);
     },);
   }
 }

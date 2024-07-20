@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:quiz_app/features/home/manger/themeProvider.dart';
 import 'package:quiz_app/my_app.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'core/cache/CacheData.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -10,6 +11,7 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await CacheData.cacheInit();
   runApp(ChangeNotifierProvider(create: (context) => SettingProvider(),
   child: const MyApp(),
   ));

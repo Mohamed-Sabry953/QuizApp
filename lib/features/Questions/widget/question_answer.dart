@@ -41,17 +41,11 @@ class QuestionAnswer extends StatelessWidget {
             QuestionsPageCubit.get(context).saveStudentAnswer();
           },
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              GradientText(answer,
-                gradient: QuestionsPageCubit.get(context).answerNumber==answerNumber?
-                LinearGradient(
-                    colors: [Color(0xff3550DC), Color(0xff27E9F7)]):LinearGradient(
-                    colors: [Colors.black, Colors.black]),
-              ),
               Container(
-                margin: REdgeInsets.only(
-                    right: 8, left: 8),
+                margin: REdgeInsetsDirectional.only(
+                    start: 25, end: 10),
                 width: 40.w,
                 height: 40.h,
                 decoration: BoxDecoration(
@@ -92,6 +86,12 @@ class QuestionAnswer extends StatelessWidget {
                             : Colors.blue),
                   ),
                 ),
+              ),
+              GradientText(answer,
+                gradient: QuestionsPageCubit.get(context).answerNumber==answerNumber?
+                LinearGradient(
+                    colors: [Color(0xff3550DC), Color(0xff27E9F7)]):LinearGradient(
+                    colors: [Colors.black, Colors.black]),
               ),
             ],
           ),
