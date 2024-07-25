@@ -25,7 +25,6 @@ class HomePageCubit extends Cubit<HomePageState> {
   String? userImgFileUrl;
   CollectionReference subject = FirebaseFirestore.instance.collection('Subjects');
   bool accCheck=false;
-  bool accDeas=false;
 
   getSubjectFromFirebase() {
     if(CacheData.getUpgradeAccData(key: "Upgrade")==true){
